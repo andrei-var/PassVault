@@ -1,19 +1,56 @@
-# Python
+# Python artifacts & cache
 __pycache__/
 *.py[cod]
 *$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
 
-# Virtual Environment
+# Virtual environments
 venv/
 env/
+ENV/
+.venv/
+test_venv/
+
+# Secrets, Database & Configuration (CRITICAL - Never commit)
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+salt.key
 .env
 
-# Database and Secrets (CRITICAL)
-*.db
-salt.key
-*.sqlite3
-
-# Backups and Logs
+# Backups & Debug Logs
 backup/
+backups/
 *.log
+debug_output.txt
+debug_ui.py
+
+# OS / Editor files
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo

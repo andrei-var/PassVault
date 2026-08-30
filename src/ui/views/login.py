@@ -16,15 +16,15 @@ class LoginFrame(customtkinter.CTkFrame):
         # Center card container
         self.card = customtkinter.CTkFrame(self, width=450, height=550, fg_color="#181824")
         self.card.grid(row=0, column=0, padx=40, pady=40)
-        self.card.grid_propagate(False)
-        self.card.grid_columnconfigure(0, weight=1)
+        self.card.pack_propagate(False)
 
         # App Title
         self.logo_label = customtkinter.CTkLabel(self.card, text="🔒 PassVault", font=("Outfit", 32, "bold"), text_color="#7C4DFF")
         self.logo_label.pack(pady=(40, 10))
 
         # Check if first setup
-        self.is_first_run = self.master_app.db.get_config("verification_token") is None
+        self.db = getattr(master, 'db', None) or DatabaseManager()
+        self.is_first_run = self.db.get_config("verification_token") is None
 
         if self.is_first_run:
             self.title_label = customtkinter.CTkLabel(self.card, text="Initialize Master Password", font=("Roboto", 18, "bold"))

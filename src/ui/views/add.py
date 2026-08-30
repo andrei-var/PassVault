@@ -16,8 +16,7 @@ class AddView(customtkinter.CTkFrame):
         # Main Card Form
         self.card = customtkinter.CTkFrame(self, width=540, height=560, fg_color="#181824")
         self.card.grid(row=0, column=0, padx=20, pady=20)
-        self.card.grid_propagate(False)
-        self.card.grid_columnconfigure(0, weight=1)
+        self.card.pack_propagate(False)
 
         # Form Header
         self.title_lbl = customtkinter.CTkLabel(self.card, text="Add Credentials", font=("Outfit", 22, "bold"))

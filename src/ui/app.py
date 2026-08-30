@@ -43,12 +43,12 @@ class App(customtkinter.CTk):
         # Start with Login
         self.show_login()
 
-    def center_window(self):
+    def center_window(self, width=1000, height=700):
         self.update_idletasks()
-        width = self.winfo_width()
-        height = self.winfo_height()
-        x = (self.winfo_screenwidth() // 2) - (width // 2)
-        y = (self.winfo_screenheight() // 2) - (height // 2)
+        screen_width = self.winfo_screenwidth()
+        screen_height = self.winfo_screenheight()
+        x = (screen_width - width) // 2
+        y = (screen_height - height) // 2
         self.geometry(f"{width}x{height}+{x}+{y}")
 
     def show_login(self):

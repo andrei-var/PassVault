@@ -18,6 +18,7 @@ class HomeFrame(customtkinter.CTkFrame):
         # 1. Sidebar Frame
         self.sidebar = customtkinter.CTkFrame(self, width=240, corner_radius=0, fg_color="#181824")
         self.sidebar.grid(row=0, column=0, sticky="nsew")
+        self.sidebar.grid_columnconfigure(0, weight=1)
         self.sidebar.grid_rowconfigure(6, weight=1) # Push logout button to the bottom
 
         # Logo text
